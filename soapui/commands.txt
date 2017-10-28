@@ -1,0 +1,22 @@
+docker rmi nmrao/soapui:5.3.0
+
+docker build -t nmrao/soapui:5.3.0 .
+
+#1
+docker run --name testsoap530 --rm -ti nmrao/soapui:5.3.0
+
+docker run --name testsoap530 --rm -ti nmrao/soapui:5.3.0 demo-soapui-project.xml
+
+#1a
+docker run --name testsoap530 --rm -ti -v ${PWD}/artifacts:/drive --env "RESULTS=/drive/Results" nmrao/soapui:5.3.0
+
+docker run --name testsoap530 --rm -ti -v ${PWD}/artifacts:/drive --env "RESULTS=/drive/Results" nmrao/soapui:5.3.0 demo-soapui-project.xml
+
+
+#2
+docker run --name testsoap530 --rm -ti -v ${PWD}/artifacts:/drive --env "RESULTS=/drive/Results" nmrao/soapui:5.3.0 /drive/projects/demo-soapui-project.xml
+
+#3 
+docker run --name testsoap530 --rm -ti -v ${PWD}/artifacts:/drive --env "RESULTS=/drive/Results" --entrypoint ant nmrao/soapui:5.3.0
+
+docker run --name testsoap530 --rm -ti -v ${PWD}/artifacts:/drive --env "RESULTS=/drive/Results" --entrypoint ant nmrao/soapui:5.3.0 -Dsoapui.project=/drive/projects/demo-soapui-project.xml
