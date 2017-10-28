@@ -1,6 +1,6 @@
 # README
 
-Copy the following softwares and extract them in the same directory
+Download & copy the following softwares and extract them in the same directory
 
   - Apache-Ant 1.9.4 or higher
   - SoapUI 5.3.0
