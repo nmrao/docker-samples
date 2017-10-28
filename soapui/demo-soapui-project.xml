@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project activeEnvironment="Default" name="demo" soapui-version="4.5.1" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings/>
+  <con:testSuite name="TestSuite 1">
+    <con:settings/>
+    <con:runType>SEQUENTIAL</con:runType>
+    <con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TestCase 1" searchProperties="true">
+      <con:settings/>
+      <con:testStep type="groovy" name="Groovy Script">
+        <con:settings/>
+        <con:config>
+          <script>def number = new Random().nextInt()
+if (number % 2 == 0) { 
+	log.info 'Number is even'
+} else {
+	def msg = "${number} is not even"
+	throw new Error(msg)
+}</script>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+    </con:testCase>
+    <con:properties/>
+  </con:testSuite>
+  <con:properties/>
+  <con:wssContainer/>
+</con:soapui-project>
